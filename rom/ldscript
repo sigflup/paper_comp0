@@ -1,0 +1,21 @@
+
+SECTIONS
+{
+  .text_rodata 0x000000:
+  {
+    *(.text)
+   . = ALIGN(0x2);
+   *(.rodata)
+
+  }
+
+  .data 0x800000 :
+  {
+   . = ALIGN(0x4);
+    *(.data)
+    *(.bss)
+
+  }
+
+
+}

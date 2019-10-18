@@ -1,0 +1,35 @@
+m68k_in.o: m68k_in.c m68kops.h m68kcpu.h m68k.h m68kconf.h \
+  /usr/include/limits.h /usr/include/sys/cdefs.h \
+  /usr/include/machine/cdefs.h /usr/include/sys/limits.h \
+  /usr/include/machine/limits.h /usr/include/sys/syslimits.h
+m68kcpu.o: m68kcpu.c m68kops.h m68kcpu.h m68k.h m68kconf.h \
+  /usr/include/limits.h /usr/include/sys/cdefs.h \
+  /usr/include/machine/cdefs.h /usr/include/sys/limits.h \
+  /usr/include/machine/limits.h /usr/include/sys/syslimits.h
+m68kdasm.o: m68kdasm.c /usr/include/stdlib.h /usr/include/sys/cdefs.h \
+  /usr/include/machine/cdefs.h /usr/include/sys/_null.h \
+  /usr/include/machine/_types.h /usr/include/sys/types.h \
+  /usr/include/sys/endian.h /usr/include/sys/_endian.h \
+  /usr/include/sys/_types.h /usr/include/machine/endian.h \
+  /usr/include/stdio.h /usr/include/string.h /usr/include/strings.h \
+  m68k.h m68kconf.h
+m68kmake.o: m68kmake.c /usr/include/stdio.h /usr/include/sys/cdefs.h \
+  /usr/include/machine/cdefs.h /usr/include/sys/_null.h \
+  /usr/include/sys/_types.h /usr/include/machine/_types.h \
+  /usr/include/sys/types.h /usr/include/sys/endian.h \
+  /usr/include/sys/_endian.h /usr/include/machine/endian.h \
+  /usr/include/stdlib.h /usr/include/string.h /usr/include/strings.h \
+  /usr/include/ctype.h /usr/include/stdarg.h
+m68kopac.o: m68kopac.c m68kcpu.h m68k.h m68kconf.h /usr/include/limits.h \
+  /usr/include/sys/cdefs.h /usr/include/machine/cdefs.h \
+  /usr/include/sys/limits.h /usr/include/machine/limits.h \
+  /usr/include/sys/syslimits.h
+m68kopdm.o: m68kopdm.c m68kcpu.h m68k.h m68kconf.h /usr/include/limits.h \
+  /usr/include/sys/cdefs.h /usr/include/machine/cdefs.h \
+  /usr/include/sys/limits.h /usr/include/machine/limits.h \
+  /usr/include/sys/syslimits.h
+m68kopnz.o: m68kopnz.c m68kcpu.h m68k.h m68kconf.h /usr/include/limits.h \
+  /usr/include/sys/cdefs.h /usr/include/machine/cdefs.h \
+  /usr/include/sys/limits.h /usr/include/machine/limits.h \
+  /usr/include/sys/syslimits.h
+m68kops.o: m68kops.c m68kops.h
