@@ -11,10 +11,10 @@ ${LIBNAME}: ${OBJS}
 	${AR} -q ${LIBNAME} ${OBJS}
 	${RANLIB} ${LIBNAME}
 
-draw.o: m68kcpu.c 
+m68kcpu.o: m68kcpu.c 
 	${CC} -c ${CFLAGS} m68kcpu.c
 
-draw.o: m68kopac.c
+m68kopac.o: m68kopac.c
 	${CC} -c ${CFLAGS} m68kopac.c
 
 m68kopdm.o: m68kopdm.c
@@ -29,4 +29,3 @@ m68kops.o: m68kops.c
 clean:
 	rm -f ${LIBNAME} ${OBJS}
 
-include depend
