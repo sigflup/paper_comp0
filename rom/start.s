@@ -115,6 +115,8 @@ KEY:
 	mov.l #0x410000, %d0
 	mov.l %d0, %a0
 	mov.b #'D', (%a0)
+	mov.b #'\n', (%a0)
+
 	rte
 
 CLK:
