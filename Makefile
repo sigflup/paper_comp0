@@ -5,7 +5,7 @@ LIBS=
 PROGNAME=paper
 
 
-OBJS = main.o mem.o cpu/libcpu.a
+OBJS = main.o mem.o io.o cpu/libcpu.a
 
 ${PROGNAME}: ${OBJS} 
 	${CC} -o ${PROGNAME}  ${OBJS} ${LIBS}
@@ -16,6 +16,8 @@ main.o: main.c
 mem.o: mem.c rom/rom.h
 	${CC} -c ${CFLAGS} mem.c
 
+io.o: io.c io.h
+	${CC} -c ${CFLAGS} io.c
 
 cpu/libcpu.a:
 	cd cpu && make

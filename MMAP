@@ -1,0 +1,12 @@
+System memory map! 
+
+
+
+0xa10000 16-bit storage command 
+0xa10004 16-bit storage data
+0xa10008 8-bit  console out
+0xa1000a 8-bit  console in 
+
+0x800000 
+ | Working ram
+0xffffff

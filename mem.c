@@ -4,6 +4,7 @@
 #include "cpu/m68k.h"
 #include "main.h"
 #include "mem.h"
+#include "io.h"
 #include "rom/rom.h"
 
 unsigned char ram[0x800000];
@@ -69,6 +70,7 @@ void ram_writer(unsigned int addr, unsigned int data, unsigned char data_size) {
   unsigned int   *l;
  } ptr_u;
 
+
  ptr_u.v = (void *)&ram[addr - RAM_START];
 
 
@@ -122,8 +124,9 @@ void init_io_table(void) {
   io_read_table[i] = rom_reader;
   io_write_table[i] =write_only;
  }
- printf("\33[37;45m%d rom io table %s\33[0m\n", s, s == 1 ? "entry" : "entries");
-
+ 
+ io_read_table[0xa10] = io_read;
+ io_write_table[0xa10]= io_write;
 
 }
 
@@ -149,11 +152,9 @@ unsigned int  m68k_read_memory_32(unsigned int address) {
 }
 
 void m68k_write_memory_8(unsigned int address, unsigned int value) {
- if(address == 0x410000) { putchar(value); fflush(stdout); }
 #ifdef TRACE
  printf("write 8 %x %x\n", address,value);
 #endif 
-
  io_write_table[address / 0x1000](address, value, 8);
 }
 void m68k_write_memory_16(unsigned int address, unsigned int value) {

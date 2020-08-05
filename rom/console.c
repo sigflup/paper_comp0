@@ -1,5 +1,5 @@
 
-volatile unsigned char *out_addr = (unsigned char *)0x410000;
+volatile unsigned char *out_addr = (unsigned char *)0xa10008;
 
 void console_putchar(unsigned char in) {
  *out_addr = (unsigned char)in; 

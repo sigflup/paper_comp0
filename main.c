@@ -19,6 +19,7 @@
 #include "cpu/m68k.h"
 #include "main.h"
 #include "mem.h"
+#include "io.h"
 
 unsigned short swap_16(unsigned short in) {
 #ifndef HOST_LITTLE_ENDIAN

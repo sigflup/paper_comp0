@@ -70,8 +70,9 @@ data_len:
 	.dc.l 0x00000000  /* data len   */
 
 entry:
-	
-	mov.l #0x410000, %d0
+ 
+/*
+	mov.l #0xa10008, %d0
 	mov.l %d0, %a0
 	mov.l #msg, %d0
 	mov.l %d0, %a1
@@ -82,7 +83,7 @@ msg_loop:
 	mov.b %d1,  (%a0)
 	jmp msg_loop
 out_msg_loop:
-
+*/
 /* copy over data segement to 0x800000 */	
 
 	mov.l data_start, %d0
@@ -112,7 +113,7 @@ Unhandled:
 	rte
 
 KEY:
-	mov.l #0x410000, %d0
+	mov.l #0xa10008, %d0
 	mov.l %d0, %a0
 	mov.b #'D', (%a0)
 	mov.b #'\n', (%a0)
@@ -120,15 +121,16 @@ KEY:
 	rte
 
 CLK:
-	mov.l #0x410000, %d0
+	mov.l #0xa10008, %d0
 	mov.l %d0, %a0
 	mov.b #'E', (%a0)
 
 	rte
 
 .align 4
+/*
 msg:
 	.ascii "booting...\n"
 	.dc.b 0
 
-
+*/
